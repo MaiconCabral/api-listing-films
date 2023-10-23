@@ -21,9 +21,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('/films/import/model', [FilmsController::class, 'importModel'])->name('app.import.films');
+Route::post('/films/import/cache', [FilmsController::class, 'importCache'])->name('app.import.cache');
 Route::get('/films/all', [FilmsController::class, 'all'])->name('app.all.films');
 Route::get('/films/filter/winners', [FilmsController::class, 'YearsWithWinner'])->name('app.filter.year');
 Route::get('/films/filter/studios', [FilmsController::class, 'byStudios'])->name('app.filter.studios');
 Route::get('/films/filter/year', [FilmsController::class, 'byYear'])->name('app.filter.studios');
 Route::get('/films/filter/interval', [FilmsController::class, 'byInterval'])->name('app.filter.interval');
-Route::post('/films/import/cache', [FilmsController::class, 'importCache'])->name('app.import.cache');
