@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "c972dd56-1b3c-441a-9a92-ac1b3b624566",
+		"name": "Api Films",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All Films",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/films/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"films",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Import CSV from model",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/films/import/model",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"films",
+						"import",
+						"model"
+					]
+				},
+				"description": "sqlite database"
+			},
+			"response": []
+		},
+		{
+			"name": "Films interval",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/films/filter/interval",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"films",
+						"filter",
+						"interval"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Years with winner",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/films/filter/winners",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"films",
+						"filter",
+						"winners"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Winners by studios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/films/filter/studios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"films",
+						"filter",
+						"studios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter by Year",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/films/filter/year?winner=true&year=1980",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"films",
+						"filter",
+						"year"
+					],
+					"query": [
+						{
+							"key": "winner",
+							"value": "true"
+						},
+						{
+							"key": "year",
+							"value": "1980"
+						}
+					]
+				},
+				"description": "Filter results with year and winner parameters (true or false)"
+			},
+			"response": []
+		}
+	]
+}
