@@ -148,14 +148,9 @@ class FilmsController extends Controller
     public function importCache(Request $request){
 
         try{
-            //$data = Films::all();
-
-            // Cache::putMany($films, 20);
-            // Cache::put('movie', $films);
-
-            // $movies = Cache::get('movie');
+            
             $data = Excel::toArray( new MoviesImport(), $request->file('file')->store('temp'));
-            $films = json_encode($data);
+            
             Cache::put('movie', $data);
             $movies = Cache::get('movie');
           
