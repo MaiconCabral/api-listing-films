@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('studios');
             $table->string('producers');
-            $table->boolean('winner')->nullable();
+            $table->string('winner')->nullable();
             $table->timestamps();
         });
     }
