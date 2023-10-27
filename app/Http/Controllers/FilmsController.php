@@ -28,6 +28,7 @@ class FilmsController extends Controller
                     "id" => $movie->id,
                     "year" => $movie->year,
                     "title" => $movie->title,
+                    "producers" => $movie->producers,
                     "studios" => $movie->studios,
                     "winner" => ($movie->winner == 'yes') ? $movie->winner : 'no',
                 );
@@ -126,14 +127,9 @@ class FilmsController extends Controller
         try{
             
             $movies = Films::where('winner','yes')->get();
-            
-            $groupedByValue = $movies->groupBy('producers');
-            $dupes = $groupedByValue->filter(function ($groups) {
-                return $groups->count() > 1;
-            });
-
+        
             $intervalAction = new SaveIntervalAction;
-            $result = $intervalAction->execute($dupes);
+            $result = $intervalAction->execute($movies);
             
             return response()->json($result, 200);
 
